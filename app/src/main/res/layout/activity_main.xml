@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather"
+    android:orientation="vertical"
+    tools:context="org.blackist.conjoined.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.9"
+            android:src="@drawable/back"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lever_sensor_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35"
+                android:textColor="#000000"
+                android:textSize="120px"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/degree"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/lever_temp_up"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/add"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="0dp"/>
+
+        <ImageButton
+            android:id="@+id/lever_temp_down"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/minus"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/lever_humi_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="湿度+"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/lever_humi_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="湿度-"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/lever_sensor_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GetData"
+        android:visibility="gone"/>
+
+</LinearLayout>
