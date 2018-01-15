@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.lever_sensor_display)
     TextView mSensorView;
 
-    private int mTemp = 35;
+    private float mTemp = 35;
     private int mHumi = 75;
 
     private List<Sensor> mSensorList;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mHandler = new Handler(getMainLooper());
+
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -190,15 +191,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refreshSensorView(List<Sensor> sensors) {
-        final String sensorInfo;
         for (Sensor sensor : sensors) {
             if (!sensor.getType().equals(DeviceType.SENSOR_TEMP))
                 continue;
-            sensorInfo = sensor.getValue();
+            mTemp = Float.parseFloat(sensor.getValue());
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mSensorView.setText(sensorInfo);
+                    mSensorView.setText(mTemp + "");
                 }
             });
             break;
